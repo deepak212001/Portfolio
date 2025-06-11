@@ -52,14 +52,14 @@
   }
 
   .icon-grid {
-    flex-direction: column;
-    gap: 0.75rem;
+    flex-direction: row;
+    gap: 0;
   }
 
   .skill-item {
     justify-content: flex-start;
     font-size: 0.95rem;
-    padding: 0.6rem 0.9rem;
+    padding: 0.4rem 0.6rem;
   }
 }
 
