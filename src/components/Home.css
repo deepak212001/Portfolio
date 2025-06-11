@@ -1,0 +1,136 @@
+.home-section {
+    /* background-image: url('../assets/bg.png'); */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 25px;
+}
+
+.home-content {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.text-section {
+    max-width: 100%;
+    line-height: 1.7;
+}
+
+.text-section h1 {
+    padding-top: 70px;
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.highlight {
+    color: #00b4ff;
+}
+
+.subheading {
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+
+.muted {
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+    padding: 30px 20px;
+}
+
+.btn-primary {
+    padding: 5px 20px;
+    border: none;
+    background: white;
+    color: black;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.btn-outline {
+    padding: 5px 20px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.image-section img {
+    width: 450px;
+    height: auto;
+    border-radius: 50%;
+}
+
+/* Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    .home-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .text-section h1 {
+        font-size: 42px;
+        padding-top: 40px;
+    }
+
+    .subheading {
+        font-size: 1.3rem;
+    }
+
+    .buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 20px 10px;
+        font-size: 18px;
+    }
+
+    .image-section img {
+        width: 300px;
+    }
+}
+
+/* Mobiles (max-width: 480px) */
+@media (max-width: 480px) {
+    .text-section h1 {
+        font-size: 32px;
+        padding-top: 30px;
+    }
+
+    .subheading {
+        font-size: 1.1rem;
+    }
+
+    .buttons {
+        gap: 10px;
+        padding: 20px 5px;
+        font-size: 16px;
+    }
+
+    .btn-primary,
+    .btn-outline {
+        padding: 5px 16px;
+        font-size: 14px;
+    }
+
+    .image-section img {
+        width: 220px;
+    }
+}

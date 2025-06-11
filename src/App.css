@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("./assets/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+
+.section {
+  height: 100vh;
+  font-size: 2rem;
+  scroll-margin-top: 60px;
+  position: relative;
+  z-index: 1;
+  padding: 4.5rem 2rem;
+  /* background: rgba(0, 0, 0, 0.464); */
+  background: rgba(0, 68, 255, 0.114);
+  color: white;
+}
+
+.home{  
+  padding: 1.5rem 2rem;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* smooth scroll */
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 3rem 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .home {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section {
+    padding: 2rem 1rem;
+    font-size: 1.2rem;
+  }
+
+  .home {
+    padding: 0.8rem 1rem;
+  }
+
+  /* Optional: You can reduce background brightness */
+  body {
+    background-size: auto 100vh;
+  }
+}
