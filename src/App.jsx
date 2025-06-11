@@ -1,6 +1,8 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
+import About from "./components/About";
+import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 
 import StarryBackground from "./components/StarryBackground";
@@ -12,8 +14,8 @@ function App() {
       <StarryBackground />
       <Navbar />
       <section id="home" className="section home"><Home /></section>
-      <section id="about" className="section">About Section</section>
-      <section id="skills" className="section">skills Section</section>
+      <section id="about" className="section"><About /></section>
+      <section id="skills" className="section"><Skills /></section>
       <section id="projects" className="section">Projects Section</section>
       <section id="contact" className="section">< Contact /></section>
     </div>

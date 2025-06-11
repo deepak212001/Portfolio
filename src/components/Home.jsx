@@ -8,7 +8,7 @@ function Home() {
       <div className="home-content">
         <div className="text-section">
           <h1>
-            Hi, I'm <span className="highlight">Deepak Yadav</span> a<br />
+            Hi 👋, I'm <span className="highlight">Deepak Yadav</span> a<br />
             Software Development <br />
             Engineer.
           </h1>
