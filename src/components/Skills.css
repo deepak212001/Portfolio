@@ -1,5 +1,5 @@
 .skills-section {
-  padding: 0 6rem ;
+  padding: 0 6rem;
   /* background-color: #0b0b0f; */
   color: white;
   font-family: 'Segoe UI', sans-serif;
@@ -12,8 +12,8 @@
   margin-bottom: 2rem;
   /* box-shadow: 0 0 10px rgba(128, 0, 255, 0.1); */
   box-shadow: 0 20px 15px rgba(0, 0, 0, .2), inset 0 2px 2px #525154;
-    background-color: #18191E;
-    border-radius: 10px;
+  background-color: #18191E;
+  border-radius: 10px;
 }
 
 .skills-title {
@@ -38,4 +38,47 @@
 
 .icon {
   font-size: 2rem;
+}
+
+
+/* Mobile: screen width ≤ 768px */
+@media screen and (max-width: 768px) {
+  .skills-section {
+    padding: 1rem;
+  }
+
+  .skills-title {
+    font-size: 1.25rem;
+  }
+
+  .icon-grid {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .skill-item {
+    justify-content: flex-start;
+    font-size: 0.95rem;
+    padding: 0.6rem 0.9rem;
+  }
+}
+
+/* Tablet: screen width between 769px and 1024px */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .skills-section {
+    padding: 1.5rem;
+  }
+
+  .skills-title {
+    font-size: 1.4rem;
+  }
+
+  .icon-grid {
+    gap: 1rem;
+  }
+
+  .skill-item {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
 }
