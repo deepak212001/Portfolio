@@ -22,6 +22,11 @@
   padding-bottom: 0.5rem;
 }
 
+.tech-logo {
+  width: 30px;
+  margin-right: 10px;
+}
+
 .icon-grid {
   display: flex;
   flex-wrap: wrap;

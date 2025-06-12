@@ -1,5 +1,9 @@
 import React from 'react';
 import './Projects.css'; // CSS is included separately
+import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+
+
 import sudoku from './image/sudoku.png';
 import rentme from './image/rentme.png';
 // import video from './image/video.png';
@@ -22,11 +26,11 @@ const projects = [
   {
     title: 'Video Streaming Backend',
     description: [
-      'Built a scalable video streaming backend with Node.js and Express.',
-      'Handled chunked video delivery, resume support and buffer optimization.',
-      'Used MongoDB for storing user and video metadata.',
+      'Developed YouTube-like backend with user registration, Upload video, like and comment functionalities.',
+      'Implemented nested likes and comments features for enhanced user engagement.',
+      'Leveraged MongoDB and Mongoose ORM to establish efficient data storage and retrieval mechanisms, optimizing system performance',
     ],
-    tech: 'Node.js, Express, MongoDB',
+    tech: 'Node.js, Express, MongoDB, Mongoose, JWT, Multer',
     github: 'https://github.com/deepak212001/VideoStreamingBackend',
     live: '',
     image: '/images/video.png',
@@ -35,10 +39,11 @@ const projects = [
     title: 'RentMe App',
     description: [
       'Created a platform for users to list and rent items or properties.',
-      'Implemented authentication, item search, booking system and payment mock.',
-      'Mobile-first design using React and Tailwind CSS.',
+      'Designed and built RESTful APIs for handling property listings, enabling users to perform CRUD operations',
+      'Mobile-first design using React and CSS.',
+      'Utilized MongoDB for managing and storing user data and property listings',
     ],
-    tech: 'MERN Stack (MongoDB, Express, React, Node.js), Tailwind CSS',
+    tech: 'MERN Stack (MongoDB, Express, React, Node.js), CSS, JWT',
     github: 'https://github.com/deepak212001/RentMe/',
     live: 'https://property-listing-website-fullstack.onrender.com/landing',
     image: rentme,
@@ -59,8 +64,8 @@ const Projects = () => {
               ))}
               <p className="tech"><i>{proj.tech}</i></p>
               <div className="icons">
-                {proj.github && <a href={proj.github} target="_blank" rel="noreferrer"><i className="fa-brands fa-github"></i></a>}
-                {proj.live && <a href={proj.live} target="_blank" rel="noreferrer"><i className="fa-solid fa-arrow-up-right-from-square"></i></a>}
+                {proj.github && <a href={proj.github} target="_blank" rel="noreferrer"><FaGithub /></a>}
+                {proj.live && <a href={proj.live} target="_blank" rel="noreferrer"><FaExternalLinkAlt /></a>}
               </div>
             </div>
             <div className="project-image">
