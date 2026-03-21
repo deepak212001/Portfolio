@@ -1,45 +1,56 @@
 import React from "react";
 import "./About.css";
 import profileImg from "../assets/profile.jpg";
+
 import leetcode from "../assets/lc.jpg";
 import CodingNinjas from "../assets/codingninja.jpeg";
+import { FaLinkedin, FaGithub, FaXTwitter } from "react-icons/fa6";
 
+function AboutDeco() {
+  return (
+    <div className="about-deco">
+      <img src="/asserts/mixed.35b891e2.svg" alt="About" className="about-deco-img" />
+    </div>
+  );
+}
 
 const About = () => {
   return (
-    <>
-      <h2 className="headding">About <hr /></h2>
-      <div className="about-section" id="about">
+    <div className="about-section" id="about">
+      <div className="about-header">
+        <AboutDeco />
+        <h2 className="about-name">Deepak Yadav</h2>
+      </div>
+      <div className="about-grid">
         <div className="about-left">
-          <img src={profileImg} alt="Profile" />
+          <p className="about-tagline">
+            My approach to the work is <em>logic, consistency, and rationality</em>
+          </p>
         </div>
         <div className="about-right">
-          <p>
-            I'm <span className="highlight-name">Deepak Yadav</span>, a passionate Full Stack Developer currently looking for opportunities. 'm currently pursuing Masters in Computer Applications with the major in Software Engineering. As a CS student, I have been working on various projects in the past. The tech stack that I mostly used are HTML, CSS, JavaScript, React, Node ,Express, MongoDB, SQL,AWS etc. I have knowledge on DSA, OOPS and DBMS
+          <p className="about-bio">
+            I'm a passionate Full Stack Developer with 1+ year of experience in Full Stack Development, currently pursuing Masters in Computer Applications. I build web applications using React, Node.js, MongoDB, and more. Strong foundation in DSA, OOP, and DBMS. 300+ LeetCode problems solved.
           </p>
-
-          <h2>Education</h2>
-          <p><strong>University School of Information, Communication, and Technology (GGSIP University), Delhi</strong></p>
-          <p className="blue">
-            <p>Masters in Computer Application (MCA) in Software Engineering </p>
-            <p>CGPA: 8.518</p>
+          <p className="about-bio">
+            Education: MCA from GGSIP University, Delhi (CGPA: 8.518). Always eager to learn and solve real-world problems through code.
           </p>
-
-          <h2>Achievements</h2>
-          <ul className="grey">
-            <li>‣ Solved <a className="ach">300+ problems</a> on LeetCode</li>
-            <li>‣ Achievements <a className="ach">100 Day Badge</a> of 2024 on LeetCode.</li>
-            <li>‣ Solved <a className="ach">100+ problems</a> on Code360 by CodingNinjas.</li>
-          </ul>
-
-          <h2>Coding Profiles</h2>
-          <div className="coding-icons">
-            <a href="https://leetcode.com/u/deepakyadav21/" target="_blank"><img src={leetcode} alt="" /></a>
-            <a href="https://www.naukri.com/code360/profile/yadavdeepak" target="_blank"><img src={CodingNinjas} alt="" /></a>
-            <a href="#"><i className="fas fa-envelope"></i></a>
+          <div className="about-socials">
+            <a href="https://www.linkedin.com/in/deepakyadav24/" target="_blank" rel="noreferrer" className="social-pill" aria-label="LinkedIn">
+              <FaLinkedin /> LinkedIn
+            </a>
+            <a href="https://github.com/deepak212001" target="_blank" rel="noreferrer" className="social-pill" aria-label="GitHub">
+              <FaGithub /> GitHub
+            </a>
+            <a href="https://x.com/yadav_deepak24" target="_blank" rel="noreferrer" className="social-pill" aria-label="X">
+              <FaXTwitter /> X
+            </a>
+            <a href="https://leetcode.com/u/deepakyadav21/" target="_blank" rel="noreferrer" className="social-pill" aria-label="LeetCode">
+              <img src={leetcode} alt="" /> LeetCode
+            </a>
           </div>
         </div>
-      </div></>
+      </div>
+    </div>
   );
 };
 

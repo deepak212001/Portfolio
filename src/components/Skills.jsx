@@ -1,86 +1,158 @@
-// Skills.jsx
-import React from 'react';
-import './Skills.css';
+import React, { useState } from "react";
+import "./Skills.css";
 
+const categories = [
+  "All",
+  "Languages",
+  "Frontend",
+  "Backend",
+  "Databases",
+  "Tools",
+];
 
-// import { FaAws, FaGitAlt, FaGithub } from "react-icons/fa";
+const skillsData = {
+  Languages: [
+    {
+      name: "JavaScript",
+      icon: "https://img.icons8.com/?size=48&id=108784&format=png&color=ffffff",
+    },
+    {
+      name: "C",
+      icon: "https://img.icons8.com/?size=48&id=40670&format=png&color=ffffff",
+    },
+    {
+      name: "C++",
+      icon: "https://img.icons8.com/?size=48&id=40669&format=png&color=ffffff",
+    },
+  ],
+  Frontend: [
+    {
+      name: "React",
+      icon: "https://img.icons8.com/?size=48&id=123603&format=png&color=ffffff",
+    },
+    {
+      name: "HTML5",
+      icon: "https://img.icons8.com/?size=48&id=20909&format=png&color=ffffff",
+    },
+    {
+      name: "CSS3",
+      icon: "https://img.icons8.com/?size=48&id=21278&format=png&color=ffffff",
+    },
+    {
+      name: "Tailwind CSS",
+      icon: "https://img.icons8.com/?size=48&id=CIAZz2CYc6Kc&format=png&color=ffffff",
+    },
+    {
+      name: "Material UI",
+      icon: "https://img.icons8.com/?size=48&id=gFw7X5Tbl3ss&format=png&color=ffffff",
+    },
+  ],
+  Backend: [
+    {
+      name: "Node.js",
+      icon: "https://img.icons8.com/?size=48&id=54087&format=png&color=ffffff",
+    },
+    {
+      name: "Express",
+      icon: "https://img.icons8.com/?size=48&id=SDVmtZ6VBGXt&format=png&color=ffffff",
+    },
+    {
+      name: "Mongoose",
+      icon: "https://img.icons8.com/?size=48&id=gKfcEStXI1Hm&format=png&color=ffffff",
+    },
+  ],
+  Databases: [
+    {
+      name: "MongoDB",
+      icon: "https://img.icons8.com/?size=48&id=bosfpvRzNOG8&format=png&color=ffffff",
+    },
+    {
+      name: "MySQL",
+      icon: "https://img.icons8.com/?size=48&id=UFXRpPFebwa2&format=png&color=ffffff",
+    },
+  ],
+  Tools: [
+    {
+      name: "GitHub",
+      icon: "https://img.icons8.com/?size=48&id=12599&format=png&color=ffffff",
+    },
+    {
+      name: "VS Code",
+      icon: "https://img.icons8.com/?size=48&id=9OGIyU8hrxW5&format=png&color=ffffff",
+    },
+    {
+      name: "AWS",
+      icon: "https://img.icons8.com/?size=48&id=33039&format=png&color=ffffff",
+    },
+  ],
+};
 
-const SkillSection = ({ title, skills }) => (
-  <div className="skills-box">
-    <h2 className="skills-title">{title}</h2>
-    <div className="icon-grid">
-      {skills.map((skill, index) => (
-        <div key={index} className="skill-item">
+const allSkills = Object.values(skillsData).flat();
 
-          <img src={skill.icon} alt="" className='tech-logo'/>
-          <span className="label">{skill.label}</span>
-        </div>
-      ))}
+function SkillsDeco() {
+  return (
+    <div className="skills-deco">
+      <img
+        src="/asserts/circles.a755a9d0.svg"
+        alt="Skills"
+        className="skills-deco-img"
+      />
     </div>
-  </div>
-);
+  );
+}
 
 const Skills = () => {
-  const data = [
-    {
-      title: 'Programming Languages',
-      skills: [
-        { icon: 'https://img.icons8.com/?size=100&id=108784&format=png&color=000000', label: 'JavaScript' },
-        { icon: 'https://img.icons8.com/?size=100&id=40670&format=png&color=000000', label: 'C' },
-        { icon: 'https://img.icons8.com/?size=100&id=40669&format=png&color=000000', label: 'C++' },
-        { icon: 'https://img.icons8.com/?size=100&id=20909&format=png&color=000000', label: 'HTML5' },
-        { icon: 'https://img.icons8.com/?size=100&id=21278&format=png&color=000000', label: 'CSS3' }
-      ]
-    },
-    {
-      title: 'Frameworks & Libraries',
-      skills: [
-        { icon: 'https://img.icons8.com/?size=100&id=123603&format=png&color=000000', label: 'React' },
-        { icon: 'https://img.icons8.com/?size=100&id=54087&format=png&color=000000', label: 'Node.js' },
-        { icon: 'https://img.icons8.com/?size=100&id=SDVmtZ6VBGXt&format=png&color=000000', label: 'Express' },
-        { icon: 'https://img.icons8.com/?size=100&id=gFw7X5Tbl3ss&format=png&color=000000', label: 'Material UI' },
-        { icon: 'https://img.icons8.com/?size=100&id=gKfcEStXI1Hm&format=png&color=000000', label: 'Mongoose' },
-        { icon: 'https://img.icons8.com/?size=100&id=CIAZz2CYc6Kc&format=png&color=000000', label: 'Tailwind CSS' }
-      ]
-    },
-    {
-      title: 'Databases',
-      skills: [
-        { icon: 'https://img.icons8.com/?size=100&id=UFXRpPFebwa2&format=png&color=000000', label: 'MySQL' },
-        { icon: 'https://img.icons8.com/?size=100&id=bosfpvRzNOG8&format=png&color=000000', label: 'MongoDB' }
-      ]
-    },
-    {
-      title: 'Tools',
-      skills: [
-        { icon: 'https://img.icons8.com/?size=100&id=12599&format=png&color=000000', label: 'GitHub' },
-        { icon: '', label: 'Postman' },
-        { icon: 'https://img.icons8.com/?size=100&id=9OGIyU8hrxW5&format=png&color=000000', label: 'VS code' },
-        { icon: 'https://img.icons8.com/?size=100&id=33039&format=png&color=000000', label: 'AWS' }
-      ]
-    },
-    {
-      title: 'Coursework',
-      skills: [
-        { icon: 'https://img.icons8.com/?size=100&id=102561&format=png&color=000000', label: 'Data Structures and Algorithms' },
-        { icon: 'https://img.icons8.com/?size=100&id=102561&format=png&color=000000', label: 'Operating Systems' },
-        { icon: 'https://img.icons8.com/?size=100&id=102561&format=png&color=000000', label: 'Computer Networking' },
-        { icon: 'https://img.icons8.com/?size=100&id=102561&format=png&color=000000', label: 'Object-Oriented Programming' },
-        { icon: 'https://img.icons8.com/?size=100&id=102561&format=png&color=000000', label: 'Database Management Systems' },
-        { icon: 'https://img.icons8.com/?size=100&id=102561&format=png&color=000000', label: 'Cloud Computing' }
-      ]
-    }
-  ];
+  const [active, setActive] = useState("All");
+  const skills = active === "All" ? allSkills : skillsData[active] || [];
 
   return (
-    <>
-      <h2 className="headding">Skills<hr /></h2>
-      <div className="skills-section">
-        {data.map((section, index) => (
-          <SkillSection key={index} title={section.title} skills={section.skills} />
-        ))}
+    <div className="skills-section" id="skills">
+      <div className="skills-header">
+        <SkillsDeco />
+        <h2 className="skills-title">My Skills</h2>
       </div>
-    </>
+      <div className="skills-grid">
+        <div className="skills-left">
+          <p className="skills-tagline">I build things for the people</p>
+          <p className="skills-tagline em">I can Design, Develop, Deploy</p>
+        </div>
+        <div className="skills-right">
+          <p className="skills-desc">
+            My go-to stack is React with Node.js and MongoDB. I design in code
+            and focus on clean, maintainable solutions.
+          </p>
+          <div className="skills-pills">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                className={`skill-pill ${active === cat ? "active" : ""}`}
+                onClick={() => setActive(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+          <div className="skills-list">
+            {skills.map((skill, i) => (
+              <div key={i} className="skill-item">
+                {skill.icon ? (
+                  <img
+                    src={skill.icon}
+                    alt={skill.name}
+                    className="skill-icon"
+                  />
+                ) : (
+                  <span className="skill-icon-placeholder">
+                    {skill.name[0]}
+                  </span>
+                )}
+                <span>{skill.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

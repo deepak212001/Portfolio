@@ -1,0 +1,33 @@
+.footer {
+  padding: 3rem 2rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.footer-name {
+  font-family: var(--font-script);
+  font-size: 1.25rem;
+  color: white;
+}
+
+.footer-license {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0;
+}

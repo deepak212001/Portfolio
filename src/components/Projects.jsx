@@ -1,81 +1,121 @@
-import React from 'react';
-import './Projects.css'; // CSS is included separately
-import { FaExternalLinkAlt } from "react-icons/fa";
+import React, { useState } from 'react';
+import './Projects.css';
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
-
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 import sudoku from './image/sudoku.png';
 import rentme from './image/rentme.png';
-// import video from './image/video.png';
-
 
 const projects = [
   {
     title: 'Sudoku App',
-    description: [
-      "Implemented Save & Resume functionality using localStorage.",
-      "Users can save their game state and return later to continue.",
-      "Restores all filled cells and puzzle data on reload.",
-      "Improves user experience by preventing data loss.",
-    ],
+    desc: 'Implemented Save & Resume using localStorage. Users can save game state and continue later.',
     tech: 'React, CSS, LocalStorage',
     github: 'https://github.com/deepak212001/sudoku',
     live: 'https://sudokuplay.vercel.app',
-    image: sudoku, // This will use the imported sudoku image
+    image: sudoku,
   },
   {
     title: 'Video Streaming Backend',
-    description: [
-      'Developed YouTube-like backend with user registration, Upload video, like and comment functionalities.',
-      'Implemented nested likes and comments features for enhanced user engagement.',
-      'Leveraged MongoDB and Mongoose ORM to establish efficient data storage and retrieval mechanisms, optimizing system performance',
-    ],
-    tech: 'Node.js, Express, MongoDB, Mongoose, JWT, Multer',
+    desc: 'YouTube-like backend with user registration, upload, like and comment. MongoDB and Mongoose.',
+    tech: 'Node.js, Express, MongoDB, JWT, Multer',
     github: 'https://github.com/deepak212001/VideoStreamingBackend',
     live: '',
-    image: '/images/video.png',
+    image: sudoku,
   },
   {
     title: 'RentMe App',
-    description: [
-      'Created a platform for users to list and rent items or properties.',
-      'Designed and built RESTful APIs for handling property listings, enabling users to perform CRUD operations',
-      'Mobile-first design using React and CSS.',
-      'Utilized MongoDB for managing and storing user data and property listings',
-    ],
-    tech: 'MERN Stack (MongoDB, Express, React, Node.js), CSS, JWT',
+    desc: 'Platform for listing and renting items. RESTful APIs for CRUD. Mobile-first design.',
+    tech: 'MERN Stack, CSS, JWT',
     github: 'https://github.com/deepak212001/RentMe/',
     live: 'https://property-listing-website-fullstack.onrender.com/landing',
     image: rentme,
-  }
+  },
 ];
 
-const Projects = () => {
+function ProjectsIcon() {
   return (
-    <>
-      <h2 className="headding">Projects<hr /></h2>
-      <div className="projects-container">
-        {projects.map((proj, index) => (
-          <div className="project" key={index}>
-            <div className="project-content">
-              <h2 className="title">{proj.title}</h2>
-              {proj.description.map((line, i) => (
-                <p key={i} className="desc">▸ {line}</p>
-              ))}
-              <p className="tech"><i>{proj.tech}</i></p>
-              <div className="icons">
-                {proj.github && <a href={proj.github} target="_blank" rel="noreferrer"><FaGithub /></a>}
-                {proj.live && <a href={proj.live} target="_blank" rel="noreferrer"><FaExternalLinkAlt /></a>}
-              </div>
+    <div className="projects-icon">
+      <img src="/asserts/triangles.b04486b9.svg" alt="Projects" />
+    </div>
+  );
+}
+
+const Projects = () => {
+  const [active, setActive] = useState(0);
+  const proj = projects[active];
+
+  const prev = () => setActive((a) => (a === 0 ? projects.length - 1 : a - 1));
+  const next = () => setActive((a) => (a === projects.length - 1 ? 0 : a + 1));
+
+  return (
+    <div className="projects-section" id="projects">
+      <div className="projects-header">
+        <ProjectsIcon />
+        <h2 className="projects-title">Projects</h2>
+      </div>
+
+      <div className="projects-carousel">
+        <button className="carousel-arrow prev" onClick={prev} aria-label="Previous project">
+          <FaChevronLeft />
+        </button>
+
+        <div className="project-mockup">
+          <div className="mockup-tablet">
+            <div className="mockup-screen">
+              <img src={proj.image || sudoku} alt={proj.title} />
             </div>
-            <div className="project-image">
-              <img src={proj.image || './images/sudoku.png'} alt={proj.title} />
+            <div className="mockup-chat" aria-hidden>💬</div>
+          </div>
+          <div className="mockup-phone">
+            <div className="mockup-screen">
+              <img src={proj.image || sudoku} alt={proj.title} />
             </div>
           </div>
-        ))}
+        </div>
+
+        <button className="carousel-arrow next" onClick={next} aria-label="Next project">
+          <FaChevronRight />
+        </button>
       </div>
-    </>
+
+      <div className="projects-thumb-bar">
+        <div className="thumb-bar-inner">
+          {projects.map((p, i) => (
+            <button
+              key={i}
+              className={`project-thumb ${active === i ? 'active' : ''}`}
+              onClick={() => setActive(i)}
+            >
+              <img src={p.image || sudoku} alt={p.title} />
+              <span className="thumb-num">{i + 1}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="project-footer">
+        <div className="project-footer-left">
+          <h3 className="project-title">{proj.title}</h3>
+          <p className="project-desc">{proj.desc}</p>
+        </div>
+        <div className="project-btns">
+          {proj.live && (
+            <a href={proj.live} target="_blank" rel="noreferrer" className="btn-live">
+              <FaArrowUpRightFromSquare /> Live
+            </a>
+          )}
+          {proj.github && (
+            <a href={proj.github} target="_blank" rel="noreferrer" className="btn-gh">
+              <FaGithub /> Code
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
   );
 };
+
 
 export default Projects;
