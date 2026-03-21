@@ -5,6 +5,7 @@ import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
 import { Link } from "react-scroll";
 
 const navLinks = [
+  { to: "experience", label: "Experience" },
   { to: "skills", label: "Skills" },
   { to: "projects", label: "Projects" },
   { to: "about", label: "About" },
