@@ -1,0 +1,78 @@
+.bg-effects {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bg-effects::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 85% 70% at 50% 50%, transparent 50%, rgba(0, 0, 0, 0.25) 100%);
+  pointer-events: none;
+}
+
+.bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.35;
+  animation: float 25s ease-in-out infinite;
+}
+
+.blob-1 {
+  width: 400px;
+  height: 400px;
+  background: rgba(168, 85, 247, 0.3);
+  top: -10%;
+  left: -5%;
+  animation-delay: 0s;
+  animation-duration: 25s;
+}
+
+.blob-2 {
+  width: 350px;
+  height: 350px;
+  background: rgba(236, 72, 153, 0.25);
+  top: 40%;
+  right: -8%;
+  animation-delay: -5s;
+  animation-duration: 22s;
+}
+
+.blob-3 {
+  width: 300px;
+  height: 300px;
+  background: rgba(168, 85, 247, 0.2);
+  bottom: -5%;
+  left: 20%;
+  animation-delay: -10s;
+  animation-duration: 28s;
+}
+
+.blob-4 {
+  width: 250px;
+  height: 250px;
+  background: rgba(236, 72, 153, 0.2);
+  top: 60%;
+  left: -5%;
+  animation-delay: -15s;
+  animation-duration: 24s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -40px) scale(1.05);
+  }
+  50% {
+    transform: translate(-20px, 30px) scale(0.95);
+  }
+  75% {
+    transform: translate(40px, 20px) scale(1.02);
+  }
+}

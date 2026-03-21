@@ -1,16 +1,16 @@
 .navbar {
-  /* position: sticky; */
-  /* top: 0; */
+  position: sticky;
+  top: 0;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 1.25rem 2rem;
-  background: rgba(0, 0, 0, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(5, 5, 12, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .nav-brand {
@@ -60,10 +60,26 @@
   color: var(--text-gray);
   text-decoration: none;
   transition: var(--transition);
+  position: relative;
 }
 
 .nav-link:hover {
   color: white;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 .nav-contact-btn {
@@ -74,7 +90,7 @@
   font-size: 0.9rem;
   font-weight: 500;
   color: white;
-  background: linear-gradient(#000, #000) padding-box, var(--gradient) border-box;
+  background: linear-gradient(var(--bg-black), var(--bg-black)) padding-box, var(--gradient) border-box;
   border: 1px solid transparent;
   border-radius: 9999px;
   text-decoration: none;
@@ -101,7 +117,7 @@
     right: -100%;
     width: 280px;
     height: 100vh;
-    background: #0a0a0a;
+    background: var(--bg-dark);
     flex-direction: column;
     justify-content: center;
     gap: 1.5rem;

@@ -1,6 +1,63 @@
 .app {
   min-height: 100vh;
-  background: var(--bg-black);
+  position: relative;
+}
+
+.app::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+.app::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 70%);
+}
+
+.app > * {
+  position: relative;
+  z-index: 1;
+}
+
+.app > .bg-effects {
+  position: fixed;
+  z-index: 0;
+}
+
+.app > *:not(nav):not(.bg-effects) {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.app > *:nth-child(4) { animation-delay: 0.05s; }
+.app > *:nth-child(5) { animation-delay: 0.12s; }
+.app > *:nth-child(6) { animation-delay: 0.19s; }
+.app > *:nth-child(7) { animation-delay: 0.26s; }
+.app > *:nth-child(8) { animation-delay: 0.33s; }
+.app > *:nth-child(9) { animation-delay: 0.4s; }
+.app > *:nth-child(10) { animation-delay: 0.47s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .section {

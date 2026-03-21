@@ -27,7 +27,7 @@
   width: 30px;
   height: 30px;
   border: 2px solid transparent;
-  background: linear-gradient(#000, #000) padding-box, var(--gradient) border-box;
+  background: linear-gradient(var(--bg-black), var(--bg-black)) padding-box, var(--gradient) border-box;
   transform: rotate(45deg);
 }
 
@@ -48,6 +48,7 @@
   font-weight: 800;
   color: white;
   margin: 0;
+  letter-spacing: -0.02em;
 }
 
 .about-grid {
@@ -103,7 +104,7 @@
 
 .social-pill:hover {
   border-color: transparent;
-  background: linear-gradient(#1a1a1a, #1a1a1a) padding-box, var(--gradient) border-box;
+  background: linear-gradient(var(--bg-input), var(--bg-input)) padding-box, var(--gradient) border-box;
   border: 1px solid transparent;
 }
 

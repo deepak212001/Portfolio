@@ -1,8 +1,18 @@
 .footer {
   padding: 3rem 2rem 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 10%, rgba(168, 85, 247, 0.4) 40%, rgba(236, 72, 153, 0.4) 60%, transparent 90%);
 }
 
 .footer-grid {
@@ -23,7 +33,10 @@
 .footer-name {
   font-family: var(--font-script);
   font-size: 1.25rem;
-  color: white;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .footer-license {

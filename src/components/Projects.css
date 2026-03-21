@@ -23,9 +23,10 @@
 
 .projects-title {
   font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
+  font-weight: 800;
   color: white;
   margin: 0;
+  letter-spacing: -0.02em;
 }
 
 .projects-carousel {
@@ -64,6 +65,7 @@
 
 .carousel-arrow:hover {
   background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.2);
 }
 
 .carousel-arrow {
@@ -170,8 +172,13 @@
   overflow: hidden;
   cursor: pointer;
   padding: 0;
-  background: #1a1a1a;
+  background: var(--bg-input);
   transition: 0.3s ease;
+}
+
+.project-thumb:hover {
+  transform: scale(1.05);
+  border-color: rgba(168, 85, 247, 0.4);
 }
 
 .project-thumb img {

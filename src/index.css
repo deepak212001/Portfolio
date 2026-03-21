@@ -3,13 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --bg-black: #000000;
-  --bg-dark: #0a0a0a;
-  --bg-card: #141414;
-  --bg-input: #1a1a1a;
+  --bg-black: #050508;
+  --bg-dark: #0a0a12;
+  --bg-card: #12121a;
+  --bg-input: #16161f;
   
-  --gradient: linear-gradient(90deg, #a855f7, #ec4899);
-  --gradient-reverse: linear-gradient(90deg, #ec4899, #a855f7);
+  --gradient: linear-gradient(135deg, #a855f7, #ec4899);
+  --gradient-reverse: linear-gradient(135deg, #ec4899, #a855f7);
+  
+  --glow-purple: rgba(168, 85, 247, 0.25);
+  --glow-pink: rgba(236, 72, 153, 0.2);
+  --border-subtle: rgba(255, 255, 255, 0.06);
   
   --text-white: #ffffff;
   --text-gray: #a1a1aa;
@@ -20,6 +24,7 @@
   --font-script: 'Dancing Script', cursive;
   
   --transition: 0.3s ease;
+  --shadow-glow: 0 0 60px -15px rgba(168, 85, 247, 0.3);
 }
 
 * {
@@ -40,7 +45,12 @@ body {
   min-height: 100vh;
   font-family: var(--font-sans);
   color: var(--text-white);
-  background: var(--bg-black);
+  background: 
+    radial-gradient(ellipse 100% 60% at 50% -10%, rgba(168, 85, 247, 0.25), transparent 50%),
+    radial-gradient(ellipse 70% 50% at 90% 30%, rgba(236, 72, 153, 0.15), transparent 45%),
+    radial-gradient(ellipse 60% 45% at 10% 70%, rgba(168, 85, 247, 0.12), transparent 45%),
+    radial-gradient(ellipse 50% 40% at 70% 90%, rgba(236, 72, 153, 0.08), transparent 40%),
+    linear-gradient(180deg, #050508 0%, #080810 25%, #0a0a12 50%, #080810 75%, #050508 100%);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -48,4 +58,21 @@ body {
 ::selection {
   background: #a855f7;
   color: white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.6);
 }

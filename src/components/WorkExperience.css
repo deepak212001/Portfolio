@@ -25,6 +25,7 @@
   font-weight: 800;
   color: white;
   margin: 0;
+  letter-spacing: -0.02em;
 }
 
 .work-list {
@@ -38,6 +39,13 @@
   grid-template-columns: 1fr 1.5fr;
   gap: 3rem;
   align-items: start;
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: background 0.3s ease;
+}
+
+.work-entry:hover {
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .work-meta {
@@ -60,7 +68,7 @@
   top: 0.5rem;
   bottom: -0.5rem;
   width: 2px;
-  background: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(180deg, rgba(168, 85, 247, 0.5), rgba(236, 72, 153, 0.3));
 }
 
 .work-bullet {
