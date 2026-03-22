@@ -1,36 +1,42 @@
-import React, { useState } from 'react';
-import './Projects.css';
+import React, { useState } from "react";
+import "./Projects.css";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
-import sudoku from './image/sudoku.png';
-import rentme from './image/rentme.png';
+import vistasplus from "./image/vistasplus.png";
+import vistasplus_mobile from "./image/vistasplusPhone.jpeg";
+import sudoku from "./image/sudoku.png";
+import sudoku_mobile from "./image/sudokuPhone.jpeg";
+import rentme from "./image/rentme.png";
 
 const projects = [
   {
-    title: 'Sudoku App',
-    desc: 'Implemented Save & Resume using localStorage. Users can save game state and continue later.',
-    tech: 'React, CSS, LocalStorage',
-    github: 'https://github.com/deepak212001/sudoku',
-    live: 'https://sudokuplay.vercel.app',
-    image: sudoku,
+    title: "Video Streaming",
+    desc: "YouTube-like backend with user registration, upload, like and comment. MongoDB and Mongoose.",
+    tech: "Node.js, Express, MongoDB, JWT, Multer",
+    github: "https://github.com/deepak212001/VideoStreaming",
+    live: "https://vistasplus.vercel.app/",
+    image: vistasplus,
+    image_mobile: vistasplus_mobile,
   },
   {
-    title: 'Video Streaming Backend',
-    desc: 'YouTube-like backend with user registration, upload, like and comment. MongoDB and Mongoose.',
-    tech: 'Node.js, Express, MongoDB, JWT, Multer',
-    github: 'https://github.com/deepak212001/VideoStreamingBackend',
-    live: '',
-    image: sudoku,
-  },
-  {
-    title: 'RentMe App',
-    desc: 'Platform for listing and renting items. RESTful APIs for CRUD. Mobile-first design.',
-    tech: 'MERN Stack, CSS, JWT',
-    github: 'https://github.com/deepak212001/RentMe/',
-    live: 'https://property-listing-website-fullstack.onrender.com/landing',
+    title: "RentMe App",
+    desc: "Platform for listing and renting items. RESTful APIs for CRUD. Mobile-first design.",
+    tech: "MERN Stack, CSS, JWT",
+    github: "https://github.com/deepak212001/RentMe/",
+    live: "https://property-listing-website-fullstack.onrender.com/landing",
     image: rentme,
+    image_mobile: rentme,
+  },
+  {
+    title: "Sudoku App",
+    desc: "Implemented Save & Resume using localStorage. Users can save game state and continue later.",
+    tech: "React, CSS, LocalStorage",
+    github: "https://github.com/deepak212001/sudoku",
+    live: "https://sudokuplay.vercel.app",
+    image: sudoku,
+    image_mobile: sudoku_mobile,
   },
 ];
 
@@ -57,7 +63,11 @@ const Projects = () => {
       </div>
 
       <div className="projects-carousel">
-        <button className="carousel-arrow prev" onClick={prev} aria-label="Previous project">
+        <button
+          className="carousel-arrow prev"
+          onClick={prev}
+          aria-label="Previous project"
+        >
           <FaChevronLeft />
         </button>
 
@@ -66,16 +76,22 @@ const Projects = () => {
             <div className="mockup-screen">
               <img src={proj.image || sudoku} alt={proj.title} />
             </div>
-            <div className="mockup-chat" aria-hidden>💬</div>
+            <div className="mockup-chat" aria-hidden>
+              💬
+            </div>
           </div>
           <div className="mockup-phone">
             <div className="mockup-screen">
-              <img src={proj.image || sudoku} alt={proj.title} />
+              <img src={proj.image_mobile || sudoku} alt={proj.title} />
             </div>
           </div>
         </div>
 
-        <button className="carousel-arrow next" onClick={next} aria-label="Next project">
+        <button
+          className="carousel-arrow next"
+          onClick={next}
+          aria-label="Next project"
+        >
           <FaChevronRight />
         </button>
       </div>
@@ -85,7 +101,7 @@ const Projects = () => {
           {projects.map((p, i) => (
             <button
               key={i}
-              className={`project-thumb ${active === i ? 'active' : ''}`}
+              className={`project-thumb ${active === i ? "active" : ""}`}
               onClick={() => setActive(i)}
             >
               <img src={p.image || sudoku} alt={p.title} />
@@ -102,12 +118,22 @@ const Projects = () => {
         </div>
         <div className="project-btns">
           {proj.live && (
-            <a href={proj.live} target="_blank" rel="noreferrer" className="btn-live">
+            <a
+              href={proj.live}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-live"
+            >
               <FaArrowUpRightFromSquare /> Live
             </a>
           )}
           {proj.github && (
-            <a href={proj.github} target="_blank" rel="noreferrer" className="btn-gh">
+            <a
+              href={proj.github}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-gh"
+            >
               <FaGithub /> Code
             </a>
           )}
@@ -116,6 +142,5 @@ const Projects = () => {
     </div>
   );
 };
-
 
 export default Projects;
