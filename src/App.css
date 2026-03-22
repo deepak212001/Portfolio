@@ -1,6 +1,9 @@
 .app {
   min-height: 100vh;
   position: relative;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .app::before {
