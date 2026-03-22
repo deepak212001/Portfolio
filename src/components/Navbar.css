@@ -144,23 +144,30 @@
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: min(280px, 85vw);
+    right: 0;
+    width: min(300px, 100%);
     height: 100vh;
+    max-width: 100%;
     background: rgba(10, 10, 18, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
     justify-content: center;
     gap: 1.5rem;
     padding: 2rem;
-    transition: right 0.3s ease;
     border-left: 1px solid rgba(255, 255, 255, 0.08);
     z-index: 1099;
     box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+    /* Slide-in: start off-screen when closed */
+    transform: translateX(100%);
+    transition: transform 0.3s ease, visibility 0.3s;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .nav-links.open {
-    right: 0;
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .nav-toggle {
@@ -189,6 +196,7 @@
   }
 
   .nav-links {
-    width: min(260px, 90vw);
+    width: 100%;
+    max-width: 100%;
   }
 }

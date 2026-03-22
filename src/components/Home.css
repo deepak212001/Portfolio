@@ -146,7 +146,7 @@
   .hero-tagline {
     font-size: 1.4rem;
     line-height: 1.25;
-    margin: 0 3rem;
+    margin: 0 1rem;
     margin-bottom: 1.5rem;
   }
 
@@ -158,7 +158,7 @@
 
   .hero-right .hero-intro {
     padding: 1rem;
-    margin: 0 3rem;
+    margin: 0 1rem;
     font-size: 1rem;
   }
 }

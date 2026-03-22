@@ -319,6 +319,7 @@ display: none;
     left: 90%;
     bottom: -20px;
     width: 100px;
+    height: auto;
     padding: 5px;
     transform: translateX(-50%);
   }
