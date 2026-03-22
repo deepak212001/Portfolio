@@ -20,7 +20,7 @@ function Home() {
             </span>
           </a>
           <a
-            href="https://drive.google.com/file/d/1yaMkxgKxPoPc8H19MLRQJOF1lSLdfE7q/view?usp=sharing"
+            href="https://drive.google.com/file/d/1urmYCBgo14z-0wUMEwUv_pdwoVjAHXDn/view?usp=sharing"
             target="_blank"
             rel="noreferrer"
             className="btn-outline"
