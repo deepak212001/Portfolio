@@ -2,7 +2,6 @@
   padding: 6rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  overflow-x: clip;
 }
 
 .projects-header {
@@ -79,7 +78,7 @@
   align-items: center;
   min-height: 420px;
   position: relative;
-  overflow-x: clip;
+  overflow: visible;
 }
 
 .mockup-tablet {
