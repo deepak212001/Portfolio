@@ -15,6 +15,11 @@ const skillsData = {
     {
       name: "JavaScript",
       icon: "https://img.icons8.com/?size=48&id=108784&format=png&color=ffffff",
+
+    },{
+      name: "Java",
+      icon: "https://img.icons8.com/?size=100&id=13679&format=png&color=000000",
+
     },
     {
       name: "C",
@@ -55,6 +60,12 @@ const skillsData = {
     {
       name: "Express",
       icon: "https://img.icons8.com/?size=48&id=SDVmtZ6VBGXt&format=png&color=ffffff",
+
+    },  
+    {
+      name: "Spring Boot",
+      icon: "https://img.icons8.com/?size=100&id=A3Ulk2RcONKs&format=png&color=000000",
+
     },
     {
       name: "Mongoose",
